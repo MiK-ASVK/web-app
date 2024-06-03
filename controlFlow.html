@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Flows in Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 3px solid #007BFF;
+            overflow: auto;
+        }
+
+        button {
+            display: block;
+            width: 150px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 18px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Control Flows in Python</h1>
+    <p>Control flow statements in Python allow you to control the execution of your program's code. They help you to
+        make decisions, repeat actions, and execute code conditionally. The main types of control flow statements in
+        Python are:</p>
+    <ul>
+        <li><a href="#comparison">Comparison Operators</a></li>
+        <li><a href="#if">If Statements</a></li>
+        <li><a href="#for">For Loops</a></li>
+        <li><a href="#while">While Loops</a></li>
+    </ul>
+
+    <h2 id="comparison">Comparison Operators</h2>
+    <p>Comparison operators are used to compare two values. They are essential in control flow statements like
+        <code>if</code> statements. The comparison operators in Python are:</p>
+    <ul>
+        <li><code>==</code> : Equal to</li>
+        <li><code>!=</code> : Not equal to</li>
+        <li><code>&gt;</code> : Greater than</li>
+        <li><code>&gt;=</code> : Greater than or equal to</li>
+        <li><code>&lt;</code> : Less than</li>
+        <li><code>&lt;=</code> : Less than or equal to</li>
+    </ul>
+    <p>Examples:</p>
+    <pre><code>x = 5
+y = 10
+
+# Equal to
+print(x == y)  # Output: False
+
+# Not equal to
+print(x != y)  # Output: True
+
+# Greater than
+print(x > y)   # Output: False
+
+# Greater than or equal to
+print(x >= y)  # Output: False
+
+# Less than
+print(x < y)   # Output: True
+
+# Less than or equal to
+print(x <= y)  # Output: True</code></pre>
+
+    <h2 id="if">If Statements</h2>
+    <p>The <code>if</code> statement is used to test a condition. If the condition is true, the block of code inside the
+        <code>if</code> statement is executed. Optionally, you can add <code>elif</code> and <code>else</code>
+        statements to handle multiple conditions.</p>
+    <pre><code>age = 18
+
+if age >= 18:
+    print("You are an adult.")
+elif age > 12:
+    print("You are a teenager.")
+else:
+    print("You are a child.")</code></pre>
+    <p>In this example, the program will output <code>You are an adult.</code> because the condition <code>age >=
+        18</code> is true.</p>
+
+    <h2 id="for">For Loops</h2>
+    <p>The <code>for</code> loop is used to iterate over a sequence (such as a list, tuple, dictionary, set, or string)
+        and execute a block of code for each item in the sequence.</p>
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)</code></pre>
+    <p>This loop will print each fruit in the <code>fruits</code> list:</p>
+    <ul>
+        <li>apple</li>
+        <li>banana</li>
+        <li>cherry</li>
+    </ul>
+
+    <h2 id="while">While Loops</h2>
+    <p>The <code>while</code> loop is used to repeatedly execute a block of code as long as a condition is true.</p>
+    <pre><code>count = 0
+
+while count < 5:
+    print("The count is", count)
+    count += 1</code></pre>
+    <p>This loop will print the value of <code>count</code> from 0 to 4:</p>
+    <ul>
+        <li>The count is 0</li>
+        <li>The count is 1</li>
+        <li>The count is 2</li>
+        <li>The count is 3</li>
+        <li>The count is 4</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Control flow statements are essential for writing effective and efficient programs in Python. By using comparison
+        operators, <code>if</code> statements, <code>for</code> loops, and <code>while</code> loops, you can control the
+        flow of your program and handle different scenarios and repetitive tasks with ease.</p>
+
+</div>
+<button onclick="location.href='quiz_ControlFlow.html'">Take the Quiz</button>
+</body>
+</html>

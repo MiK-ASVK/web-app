@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 3px solid #007BFF;
+            overflow: auto;
+        }
+        button {
+            display: block;
+            width: 150px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 18px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function quiz() {
+            window.location.href="functionsQuiz.html"
+        }
+    </script>
+</head>
+<body>
+<main class="content">
+    <h1>Functions in Python</h1>
+    <article>
+        <p>In Python, a function is a block of code which only runs when it is called. You can pass data, known as parameters, into a function. A function can return data as a result.</p>
+
+        <h2>Defining a Function</h2>
+        <p>To define a function in Python, you use the <code>def</code> keyword:</p>
+        <pre>
+def my_function():
+    print("Hello from a function")
+    </pre>
+
+        <h2>Calling a Function</h2>
+        <p>To call a function, use the function name followed by parentheses:</p>
+        <pre>
+my_function()
+    </pre>
+
+        <h2>Parameters</h2>
+        <p>Functions can accept parameters, which are specified after the function name inside the parentheses. You can add as many parameters as you want, just separate them with a comma:</p>
+        <pre>
+def my_function_with_params(param1, param2):
+    print(param1 + " " + param2)
+
+my_function_with_params("Hello", "World")
+    </pre>
+
+        <h2>Return Values</h2>
+        <p>To let a function return a value, use the <code>return</code> statement:</p>
+        <pre>
+def my_returning_function(x):
+    return 5 * x
+
+print(my_returning_function(3))
+print(my_returning_function(5))
+print(my_returning_function(9))
+    </pre>
+
+        <h2>Default Parameter Value</h2>
+        <p>If we call the function without an argument, it uses the default value:</p>
+        <pre>
+def my_function_with_default(country="Norway"):
+    print("I am from " + country)
+
+my_function_with_default("Sweden")
+my_function_with_default()
+my_function_with_default("India")
+    </pre>
+
+        <h2>Keyword Arguments</h2>
+        <p>You can also send arguments with the key = value syntax. This way the order of the arguments does not matter:</p>
+        <pre>
+def my_function_with_kwargs(child3, child2, child1):
+    print("The youngest child is " + child3)
+
+my_function_with_kwargs(child1="Emil", child2="Tobias", child3="Linus")
+    </pre>
+
+        <h2>Arbitrary Arguments</h2>
+        <p>If you do not know how many arguments that will be passed into your function, add a <code>*</code> before the parameter name in the function definition:</p>
+        <pre>
+def my_function_with_arbitrary_args(*kids):
+    print("The youngest child is " + kids[2])
+
+my_function_with_arbitrary_args("Emil", "Tobias", "Linus")
+    </pre>
+    </article>
+</main>
+<button onclick="quiz()">Take the quiz</button>
+</body>
+</html>

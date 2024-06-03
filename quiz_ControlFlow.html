@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Control Flows Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        .quiz-section {
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 150px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 18px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Python Control Flows Quiz</h1>
+
+<div class="quiz-section">
+    <h2>1. What will the following code print?</h2>
+    <pre><code>x = 5
+y = 10
+if x < y:
+    print("x is less than y")
+else:
+    print("x is not less than y")</code></pre>
+    <label><input type="radio" name="q1" value="a"> x is less than y</label><br>
+    <label><input type="radio" name="q1" value="b"> x is not less than y</label>
+</div>
+
+<div class="quiz-section">
+    <h2>2. Which operator is used to check if two values are not equal?</h2>
+    <label><input type="radio" name="q2" value="a"> ==</label><br>
+    <label><input type="radio" name="q2" value="b"> !=</label><br>
+    <label><input type="radio" name="q2" value="c"> &gt;</label><br>
+    <label><input type="radio" name="q2" value="d"> &lt;</label>
+</div>
+
+<div class="quiz-section">
+    <h2>3. What will the following loop print?</h2>
+    <pre><code>for i in range(3):
+    print(i)</code></pre>
+    <label><input type="radio" name="q3" value="a"> 0 1 2</label><br>
+    <label><input type="radio" name="q3" value="b"> 1 2 3</label><br>
+    <label><input type="radio" name="q3" value="c"> 0 1 2 3</label><br>
+    <label><input type="radio" name="q3" value="d"> None of the above</label>
+</div>
+
+<div class="quiz-section">
+    <h2>4. How many times will the following loop execute?</h2>
+    <pre><code>count = 0
+while count < 3:
+    count += 1</code></pre>
+    <label><input type="radio" name="q4" value="a"> 1</label><br>
+    <label><input type="radio" name="q4" value="b"> 2</label><br>
+    <label><input type="radio" name="q4" value="c"> 3</label><br>
+    <label><input type="radio" name="q4" value="d"> 4</label>
+</div>
+
+<button onclick="checkAnswers()">Submit Quiz</button>
+
+<button onclick="location.href='topics.html'">Back to Topics</button>
+
+
+<script>
+    function checkAnswers() {
+        var correctAnswers = ['a', 'b', 'a', 'c'];
+        var score = 0;
+        for (var i = 1; i <= correctAnswers.length; i++) {
+            var radios = document.getElementsByName('q' + i);
+            for (var j = 0; j < radios.length; j++) {
+                if (radios[j].checked && radios[j].value === correctAnswers[i - 1]) {
+                    score++;
+                }
+            }
+        }
+        var totalQuestions = correctAnswers.length;
+        var incorrectAnswers = totalQuestions - score;
+
+        var message;
+        if (score === totalQuestions) {
+            message = 'Excellent! You got all the answers right!';
+        } else if (score > totalQuestions / 2) {
+            message = 'Good job! You scored ' + score + ' out of ' + totalQuestions + '.';
+        } else {
+            message = 'You scored ' + score + ' out of ' + totalQuestions + '. Keep practicing!';
+        }
+        message += '\nIncorrect answers: ' + incorrectAnswers;
+
+        alert(message);
+    }
+</script>
+
+</body>
+</html>

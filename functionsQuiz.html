@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Functions Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1, h2 {
+      color: #333;
+      text-align: center;
+    }
+    .quiz-section {
+      margin-bottom: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+    button {
+      display: block;
+      width: 150px;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 18px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<h1>Python Functions Quiz</h1>
+
+<div class="quiz-section">
+  <h2>1. How do you define a function in Python?</h2>
+  <label><input type="radio" name="q1" value="a"> A. function my_function():</label><br>
+  <label><input type="radio" name="q1" value="b"> B. def my_function:</label><br>
+  <label><input type="radio" name="q1" value="c"> C. def my_function():</label><br>
+  <label><input type="radio" name="q1" value="d"> D. function my_function:</label>
+</div>
+
+<div class="quiz-section">
+  <h2>2. How do you call a function named `my_function`?</h2>
+  <label><input type="radio" name="q2" value="a"> A. call my_function()</label><br>
+  <label><input type="radio" name="q2" value="b"> B. execute my_function()</label><br>
+  <label><input type="radio" name="q2" value="c"> C. my_function()</label><br>
+  <label><input type="radio" name="q2" value="d"> D. run my_function()</label>
+</div>
+
+<div class="quiz-section">
+  <h2>3. What is the correct way to return a value from a function?</h2>
+  <label><input type="radio" name="q3" value="a"> A. return value</label><br>
+  <label><input type="radio" name="q3" value="b"> B. return(value)</label><br>
+  <label><input type="radio" name="q3" value="c"> C. return: value</label><br>
+  <label><input type="radio" name="q3" value="d"> D. value = return</label>
+</div>
+
+<div class="quiz-section">
+  <h2>4. How do you specify a default parameter value in a function?</h2>
+  <label><input type="radio" name="q4" value="a"> A. def my_function(param=default):</label><br>
+  <label><input type="radio" name="q4" value="b"> B. def my_function(param: default):</label><br>
+  <label><input type="radio" name="q4" value="c"> C. def my_function(param, default):</label><br>
+  <label><input type="radio" name="q4" value="d"> D. def my_function(param = default):</label>
+</div>
+
+<div class="quiz-section">
+  <h2>5. Which keyword is used to specify an arbitrary number of arguments?</h2>
+  <label><input type="radio" name="q5" value="a"> A. *</label><br>
+  <label><input type="radio" name="q5" value="b"> B. **</label><br>
+  <label><input type="radio" name="q5" value="c"> C. &</label><br>
+  <label><input type="radio" name="q5" value="d"> D. ++</label>
+</div>
+
+<button onclick="checkAnswers()">Submit Quiz</button>
+<button onclick="location.href='topics.html'">Back to Topics</button>
+<div class="result" id="result"></div>
+
+
+<script>
+  function checkAnswers() {
+    var correctAnswers = ['c', 'c', 'a', 'd', 'a'];
+    var score = 0;
+    for (var i = 1; i <= correctAnswers.length; i++) {
+      var radios = document.getElementsByName('q' + i);
+      for (var j = 0; j < radios.length; j++) {
+        if (radios[j].checked && radios[j].value === correctAnswers[i - 1]) {
+          score++;
+        }
+      }
+    }
+    var totalQuestions = correctAnswers.length;
+    var incorrectAnswers = totalQuestions - score;
+
+    var message;
+    if (score === totalQuestions) {
+      message = 'Excellent! You got all the answers right!';
+    } else if (score > totalQuestions / 2) {
+      message = 'Good job! You scored ' + score + ' out of ' + totalQuestions + '.';
+    } else {
+      message = 'You scored ' + score + ' out of ' + totalQuestions + '. Keep practicing!';
+    }
+    message += '\nIncorrect answers: ' + incorrectAnswers;
+
+    alert(message);
+  }
+</body>
+</html>

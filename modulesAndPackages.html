@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modules and Packages in Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 3px solid #007BFF;
+            overflow: auto;
+        }
+
+        button {
+            display: block;
+            width: 150px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 18px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Modules and Packages in Python</h1>
+    <p>In Python, modules and packages help in organizing code logically and making it reusable. Let's explore what
+        modules and packages are, their differences, and how to use them with examples.</p>
+
+    <h2 id="modules">Modules</h2>
+    <p>A module is a single file (or files) that are imported under one import and used. Modules can contain functions,
+        classes, and variables. They can also include runnable code.</p>
+    <p>Creating a module is as simple as saving a Python code file with a <code>.py</code> extension. Here's an example
+        of a module:</p>
+    <pre><code># Create a file named mymodule.py with the following content:
+
+def greet(name):
+    return f"Hello, {name}!"
+
+# Now you can use this module in another script:
+import mymodule
+
+print(mymodule.greet("Alice"))  # Output: Hello, Alice!</code></pre>
+    <p>Modules help in organizing code by breaking it into smaller, manageable, and reusable components.</p>
+
+    <h2 id="packages">Packages</h2>
+    <p>A package is a collection of modules in directories that give a package hierarchy. Packages are a way of
+        structuring Python’s module namespace by using "dotted module names". A package is typically a directory that
+        contains multiple module files and a special <code>__init__.py</code> file.</p>
+    <p>Example:</p>
+    <pre><code># Directory structure:
+# mypackage/
+#     __init__.py
+#     module1.py
+#     module2.py
+
+# In module1.py:
+def func1():
+    return "This is function 1"
+
+# In module2.py:
+def func2():
+    return "This is function 2"
+
+# In another script, you can use the package:
+from mypackage import module1, module2
+
+print(module1.func1())  # Output: This is function 1
+print(module2.func2())  # Output: This is function 2</code></pre>
+    <p>The <code>__init__.py</code> file can be empty, but its presence indicates to Python that the directory should be
+        treated as a package.</p>
+    <p>Packages allow for a hierarchical structuring of the module namespace using dot notation. This helps in
+        organizing related modules together.</p>
+
+    <h2 id="differences">Differences Between Modules and Packages</h2>
+    <ul>
+        <li><strong>Module:</strong> A single file of Python code that can be imported.</li>
+        <li><strong>Package:</strong> A collection of modules in directories that provide a hierarchical structure.</li>
+        <li>Modules are usually a single file, while packages are a directory with multiple module files and an <code>__init__.py</code>
+            file.
+        </li>
+    </ul>
+    <p>In essence, while a module is a single file of code, a package is a directory of modules that allows for a more
+        organized and modular approach to managing large codebases.</p>
+
+    <h2>Conclusion</h2>
+    <p>Understanding and using modules and packages in Python is essential for organizing code, making it reusable, and
+        managing complex projects efficiently. Modules allow for single-file reusability, while packages offer a way to
+        structure and organize modules into a directory hierarchy.</p>
+
+
+</div>
+<button onclick="location.href='quiz_modules_packages.html'">Take the Quiz</button>
+</body>
+</html>

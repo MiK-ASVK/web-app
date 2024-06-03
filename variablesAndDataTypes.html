@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables and Data Types in Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 3px solid #007BFF;
+            overflow: auto;
+        }
+        button {
+            display: block;
+            width: 150px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 18px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content">
+    <h1>Variables and Data Types in Python</h1>
+    <p>
+        In Python, a variable is a name that refers to a value stored in the computer's memory. Variables are used to store data values, and their values can change during the execution of a program.
+    </p>
+    <p>
+        Unlike some other programming languages, Python variables do not need to be explicitly declared with a specific data type. Instead, the type of a variable is inferred from the value assigned to it.
+    </p>
+    <div id="variNames">
+        <h3>Variables names</h3>
+        <p>A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume). Rules for Python variables:
+        </p>
+        <ul>
+            <li>A variable name must start with a letter or the underscore character</li>
+            <li>A variable name cannot start with a number</li>
+            <li>A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )</li>
+            <li>Variable names are case-sensitive (age, Age and AGE are three different variables)</li>
+            <li>A variable name cannot be any of the Python keywords.</li>
+        </ul>
+    </div>
+    <div id="globalVari">
+        <h3>Global Variables</h3>
+        <p>Variables that are created outside of a function (as in all of the examples above) are known as global variables.
+            Global variables can be used by everyone, both inside of functions and outside.
+        </p>
+        <p>If you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function.
+            The global variable with the same name will remain as it was, global and with the original value.</p>
+    </div>
+    <h2>Example of Variable Assignment:</h2>
+    <pre>
+# Assigning values to variables
+x = 5             # Integer variable
+y = "Hello, World!"  # String variable
+z = 3.14          # Float variable
+  </pre>
+    <p>
+        Variables do not need to be declared with any particular type and can even change type after they have been set.
+    </p>
+    <pre>
+x = 4       # x is of type int
+x = "Sally" # x is now of type str
+  </pre>
+    <p>
+        Python has various built-in data types that represent different kinds of values that can be stored and manipulated in a program. Some of the commonly used data types include:
+    </p>
+    <pre>x = "awesome"
+
+def myfunc():
+    print("Python is " + x)
+
+myfunc()
+  </pre>
+    <ul>
+        <li><strong>int:</strong> Integer values, e.g., 5, -3, 100.</li>
+        <li><strong>float:</strong> Floating-point values, e.g., 3.14, -0.001, 2.5e-5.</li>
+        <li><strong>str:</strong> String values, e.g., "Hello", 'Python', "123".</li>
+        <li><strong>list:</strong> Ordered collection of items, e.g., [1, 2, 3], ['a', 'b', 'c'].</li>
+        <li><strong>tuple:</strong> Ordered, immutable collection of items, e.g., (1, 2, 3), ('a', 'b', 'c').</li>
+        <li><strong>dict:</strong> Collection of key-value pairs, e.g., {'name': 'John', 'age': 30}.</li>
+        <li><strong>set:</strong> Unordered collection of unique items, e.g., {1, 2, 3}, {'a', 'b', 'c'}.</li>
+        <li><strong>bool:</strong> Represents True or False.</li>
+    </ul>
+    <p>
+        Each of these data types serves a different purpose and can be used in various operations.
+    </p>
+</div>
+
+<button onclick="startTest()">Take the quiz</button>
+
+<script>
+    function startTest() {
+        window.location.href = 'variablesquiz.html'; // Replace with the actual URL of your quiz or test page
+    }
+</script>
+
+</body>
+</html>

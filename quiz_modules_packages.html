@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Modules and Packages Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        .quiz-section {
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 150px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 18px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Python Modules and Packages Quiz</h1>
+
+<div class="quiz-section">
+    <h2>1. What is a module in Python?</h2>
+    <label><input type="radio" name="q1" value="a"> A directory of Python code</label><br>
+    <label><input type="radio" name="q1" value="b"> A single file of Python code</label><br>
+    <label><input type="radio" name="q1" value="c"> A collection of Python packages</label><br>
+    <label><input type="radio" name="q1" value="d"> A function in Python</label>
+</div>
+
+<div class="quiz-section">
+    <h2>2. What is required in a directory to make it a package?</h2>
+    <label><input type="radio" name="q2" value="a"> A __main__.py file</label><br>
+    <label><input type="radio" name="q2" value="b"> A __init__.py file</label><br>
+    <label><input type="radio" name="q2" value="c"> A module1.py file</label><br>
+    <label><input type="radio" name="q2" value="d"> A README.md file</label>
+</div>
+
+<div class="quiz-section">
+    <h2>3. How do you import a module named 'mymodule'?</h2>
+    <label><input type="radio" name="q3" value="a"> import mymodule</label><br>
+    <label><input type="radio" name="q3" value="b"> import package.mymodule</label><br>
+    <label><input type="radio" name="q3" value="c"> include mymodule</label><br>
+    <label><input type="radio" name="q3" value="d"> from mymodule import * </label>
+</div>
+
+<div class="quiz-section">
+    <h2>4. What will the following code print?</h2>
+    <pre><code># Directory structure:
+# mypackage/
+#     __init__.py
+#     module1.py
+#     module2.py
+# In module1.py:
+def func1():
+    return "Function 1"
+# In module2.py:
+def func2():
+    return "Function 2"
+# In another script:
+from mypackage import module1, module2
+print(module1.func1())
+print(module2.func2())</code></pre>
+    <label><input type="radio" name="q4" value="a"> Function 1 Function 2</label><br>
+    <label><input type="radio" name="q4" value="b"> Function 2 Function 1</label><br>
+    <label><input type="radio" name="q4" value="c"> Error</label><br>
+    <label><input type="radio" name="q4" value="d"> None of the above</label>
+</div>
+
+<div class="quiz-section">
+    <h2>5. What is the purpose of the __init__.py file in a package?</h2>
+    <label><input type="radio" name="q5" value="a"> It initializes the package when imported</label><br>
+    <label><input type="radio" name="q5" value="b"> It contains the main code for the package</label><br>
+    <label><input type="radio" name="q5" value="c"> It must contain all the functions used in the package</label><br>
+    <label><input type="radio" name="q5" value="d"> It is required to make Python treat the directory as a package</label>
+</div>
+
+<div class="quiz-section">
+    <h2>6. Which of the following statements is true about modules and packages?</h2>
+    <label><input type="radio" name="q6" value="a"> Modules and packages are the same</label><br>
+    <label><input type="radio" name="q6" value="b"> A module is a collection of packages</label><br>
+    <label><input type="radio" name="q6" value="c"> A package is a collection of modules</label><br>
+    <label><input type="radio" name="q6" value="d"> A package can contain only one module</label>
+</div>
+
+<button onclick="checkAnswers()">Submit Quiz</button>
+<button onclick="location.href='topics.html'">Back to Topics</button>
+
+
+<script>
+    function checkAnswers() {
+        var correctAnswers = ['b', 'b', 'a', 'a', 'd', 'c'];
+        var score = 0;
+        for (var i = 1; i <= correctAnswers.length; i++) {
+            var radios = document.getElementsByName('q' + i);
+            for (var j = 0; j < radios.length; j++) {
+                if (radios[j].checked && radios[j].value === correctAnswers[i - 1]) {
+                    score++;
+                }
+            }
+        }
+        var totalQuestions = correctAnswers.length;
+        var incorrectAnswers = totalQuestions - score;
+
+        var message;
+        if (score === totalQuestions) {
+            message = 'Excellent! You got all the answers right!';
+        } else if (score > totalQuestions / 2) {
+            message = 'Good job! You scored ' + score + ' out of ' + totalQuestions + '.';
+        } else {
+            message = 'You scored ' + score + ' out of ' + totalQuestions + '. Keep practicing!';
+        }
+        message += '\nIncorrect answers: ' + incorrectAnswers;
+
+        alert(message);
+    }
+</script>
+</body>
+</html>
